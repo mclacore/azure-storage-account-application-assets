@@ -21,4 +21,4 @@ jobs:
         run: pip install requests
 
       - name: Update Release Notes
-        run: python update-release-notes.py
+        run: python scripts/update-release-notes.py
