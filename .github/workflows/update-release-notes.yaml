@@ -7,10 +7,13 @@ on:
 jobs:
   update-release-notes:
     runs-on: ubuntu-latest
+    env:
+      MASSDRIVER_API_KEY: ${{ secrets.MASSDRIVER_API_KEY }}
+      MASSDRIVER_ORG_ID: ${{ secrets.MASSDRIVER_ORG_ID }}
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -22,3 +25,13 @@ jobs:
 
       - name: Update Release Notes
         run: python scripts/update-release-notes.py
+
+      - name: Install Massdriver CLI
+        run: massdriver-cloud/actions@v4
+
+      - name: Publish Bundle
+        uses: massdriver-cloud/actions/bundle_publish@v4
+
+
+# I need to integrate this into the release flow
+# maybe open a new PR with the updated release notes
