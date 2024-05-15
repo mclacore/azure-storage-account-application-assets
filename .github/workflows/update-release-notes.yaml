@@ -27,7 +27,7 @@ jobs:
         run: python scripts/update-release-notes.py
 
       - name: Install Massdriver CLI
-        run: massdriver-cloud/actions@v4
+        uses: massdriver-cloud/actions@v4
 
       - name: Publish Bundle
         uses: massdriver-cloud/actions/bundle_publish@v4
