@@ -31,7 +31,3 @@ jobs:
 
       - name: Publish Bundle
         uses: massdriver-cloud/actions/bundle_publish@v4
-
-
-# I need to integrate this into the release flow
-# maybe open a new PR with the updated release notes

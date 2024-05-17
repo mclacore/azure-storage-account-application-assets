@@ -51,7 +51,7 @@ def update_mdx_file(filename, release_notes):
 
 if __name__ == "__main__":
     owner = "massdriver-cloud"
-    repo = "azure-postgresql-flexible-server"
+    repo = "azure-storage-account-data-lake"
     releases = get_latest_releases(owner, repo)
     release_notes = generate_release_notes(releases)
     update_mdx_file("operator.mdx", release_notes)
